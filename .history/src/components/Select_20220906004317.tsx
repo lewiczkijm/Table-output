@@ -10,10 +10,9 @@ export type SelectType = {
   options: any[];
   onChange: (selected: any[]) => void;
   selected?: any[];
-  title?: string;
 };
 
-export const Select = ({ options, onChange, selected, title }: SelectType) => {
+export const Select = ({ options, onChange, selected }: SelectType) => {
   const [isFocus, setIsFocus] = useState(false);
   return (
     <label>
@@ -30,8 +29,10 @@ export const Select = ({ options, onChange, selected, title }: SelectType) => {
             >
               <div style={{ paddingLeft: 12 }} className="d-flex flex-grow-1 flex-column justify-content-between">
                 <span className="title d-flex align-items-center">
-                  <span>{title}</span>
-                  <img style={{ position: "relative", marginLeft: 10, top: -1 }} src={qestion} />
+                  <span>1234</span>
+                  <span style={{ position: "relative", marginLeft: 10 }}>
+                    <img style={{ position: "absolute" }} src={qestion} />
+                  </span>
                 </span>
                 <input
                   onFocus={(e) => {
@@ -57,6 +58,7 @@ export const Select = ({ options, onChange, selected, title }: SelectType) => {
         }}
         selected={selected}
         options={options}
+        placeholder="Любой"
       />
     </label>
   );

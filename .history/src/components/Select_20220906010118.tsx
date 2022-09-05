@@ -10,7 +10,7 @@ export type SelectType = {
   options: any[];
   onChange: (selected: any[]) => void;
   selected?: any[];
-  title?: string;
+  title: string;
 };
 
 export const Select = ({ options, onChange, selected, title }: SelectType) => {

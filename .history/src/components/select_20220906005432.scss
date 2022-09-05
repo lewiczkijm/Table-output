@@ -18,15 +18,16 @@
 
     &::-webkit-scrollbar {
       width: 6px;
+      background: transparent url(transition.png) repeat-y !important;
     }
     &::-webkit-scrollbar-thumb {
       background: #57617b;
       border-radius: 20px;
     }
     &::-webkit-scrollbar-button {
-      width: 8px;
-      height: 8px;
-      background: transparent;
+      width: 10px;
+      height: 10px;
+      background: red;
     }
     &::-webkit-scrollbar-track-piece:start {
       background-image: transparent url(transition.png) repeat-y !important;

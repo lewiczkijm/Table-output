@@ -18,6 +18,7 @@
 
     &::-webkit-scrollbar {
       width: 6px;
+      background: transparent url(transition.png) repeat-y !important;
     }
     &::-webkit-scrollbar-thumb {
       background: #57617b;
