@@ -1,0 +1,21 @@
+.select {
+  .rbt-menu.dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+  }
+  .rbt-menu.dropdown-menu::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  .rbt-menu.dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  .input {
+    height: 62px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    input {
+      //   border: 0;
+      outline: 0;
+    }
+  }
+}

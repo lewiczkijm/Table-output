@@ -1,0 +1,38 @@
+.select {
+  .rbt-menu.dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+  }
+  .rbt-menu.dropdown-menu::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  .rbt-menu.dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  .input {
+    height: 62px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    title {
+      font-size: 12px;
+      margin-top: 1px;
+    }
+    label {
+      padding-left: 12px;
+    }
+    input {
+      border: 0;
+      outline: 0;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .button {
+      padding-right: 19px;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

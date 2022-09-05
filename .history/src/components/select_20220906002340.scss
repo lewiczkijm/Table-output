@@ -1,0 +1,65 @@
+.select {
+  .rbt-menu.dropdown-menu {
+    background: #ffffff;
+    /* Shadow Form */
+    max-height: 224px;
+    box-shadow: 0px 5px 18px rgba(40, 41, 61, 0.07);
+    border: 0;
+    border-radius: 8px;
+    padding: 0;
+
+    .dropdown-item {
+      height: 56px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background: transparent url(transition.png) repeat-y !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #57617b;
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-track-piece:start {
+      background-image: transparent url(transition.png) repeat-y !important;
+    }
+    &::-webkit-scrollbar-track-piece:end {
+      background-image: transparent url(transition.png) repeat-y !important;
+    }
+  }
+
+  .input {
+    height: 62px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    .title {
+      font-size: 12px;
+      margin-top: 8px;
+      color: #828282;
+    }
+    label {
+    }
+    input {
+      margin-bottom: 6px;
+      border: 0;
+      outline: 0;
+      font-size: 14px;
+      color: #3a3c40;
+    }
+    .button {
+      padding-right: 19px;
+      img {
+        transition: transform 0.3s;
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
+import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Select } from "./components/Select";
 
@@ -14,7 +15,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div style={{ width: 280, padding: 10 }}>
+      <div style={{ width: 280 }}>
         <Select options={options} onChange={() => {}} />
       </div>
     </div>

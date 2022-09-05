@@ -14,7 +14,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div style={{ width: 280, padding: 10 }}>
+      <div style={{ width: 280 }}>
         <Select options={options} onChange={() => {}} />
       </div>
     </div>
