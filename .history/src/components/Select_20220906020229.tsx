@@ -11,15 +11,13 @@ export type SelectType = {
   onChange: (selected: any[]) => void;
   selected?: any[];
   title?: string;
-  placeholder?: string;
 };
 
-export const Select = ({ options, onChange, selected, title, placeholder }: SelectType) => {
+export const Select = ({ options, onChange, selected, title }: SelectType) => {
   const [isFocus, setIsFocus] = useState(false);
   return (
     <label className="select">
       <Typeahead
-        placeholder={placeholder}
         onChange={onChange}
         renderInput={({ inputRef, referenceElementRef, onFocus, onBlur, ...inputProps }) => {
           return (

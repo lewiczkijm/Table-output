@@ -15,10 +15,6 @@
       display: flex;
       align-items: center;
       color: #57617b;
-      &:hover,
-      &:active {
-        background: #e3e6eb;
-      }
     }
 
     &::-webkit-scrollbar {
@@ -42,6 +38,9 @@
       background: transparent;
     }
   }
+  label {
+    width: -webkit-fill-available;
+  }
   .input {
     height: 62px;
     background: #ffffff;
@@ -60,10 +59,7 @@
       border: 0;
       outline: 0;
       font-size: 14px;
-      color: #3a3c40;
-      &::placeholder {
-        color: #acacac;
-      }
+      color: #acacac;
     }
     .button {
       padding-right: 19px;

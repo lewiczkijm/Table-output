@@ -22,7 +22,7 @@ function App() {
       <div style={{ width: 800, padding: 10 }}>
         <ButtonLarge title="ABCD" onClick={() => {}} /> <ButtonLarge title="ABCD" primary onClick={() => {}} />
         <ButtonSmall icon={<img src={copy} />} title={"редактировать"} onClick={() => {}} /> <ButtonSmall title={"разделить груз"} primary onClick={() => {}} />
-        <ButtonFile title="Добавить" onChange={console.log} />
+        <ButtonFile title="Добавить" />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Select } from "./components/Select";
-import { ButtonFile, ButtonLarge, ButtonSmall } from "./components/Button";
+import { ButtonLarge, ButtonSmall } from "./components/Button";
 import copy from "./copy.svg";
 
 function App() {
@@ -19,10 +19,9 @@ function App() {
       <div style={{ width: 280, padding: 10 }}>
         <Select title="My name" placeholder="Выберите порт" options={options} onChange={() => {}} />
       </div>
-      <div style={{ width: 800, padding: 10 }}>
+      <div style={{ width: 600, padding: 10 }}>
         <ButtonLarge title="ABCD" onClick={() => {}} /> <ButtonLarge title="ABCD" primary onClick={() => {}} />
         <ButtonSmall icon={<img src={copy} />} title={"редактировать"} onClick={() => {}} /> <ButtonSmall title={"разделить груз"} primary onClick={() => {}} />
-        <ButtonFile title="Добавить" onChange={console.log} />
       </div>
     </div>
   );
