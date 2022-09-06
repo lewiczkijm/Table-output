@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Select } from "./components/select";
-import { ButtonFile, ButtonLarge, ButtonSmall } from "./components/buttons";
+import { ButtonFile, ButtonLarge, ButtonSmall } from "./components/Button";
 import copy from "./copy.svg";
-import { InputFind } from "./components/input";
 
 function App() {
   const [options, setOptions] = useState<Array<{ label: string }>>([]);
@@ -24,9 +23,6 @@ function App() {
         <ButtonLarge title="ABCD" onClick={() => {}} /> <ButtonLarge title="ABCD" primary onClick={() => {}} />
         <ButtonSmall icon={<img src={copy} />} title={"редактировать"} onClick={() => {}} /> <ButtonSmall title={"разделить груз"} primary onClick={() => {}} />
         <ButtonFile title="Добавить" onChange={console.log} />
-      </div>
-      <div style={{ width: 300, padding: 10 }}>
-        <InputFind placeholder="Найти коносамент, груз, заказ и др." />{" "}
       </div>
     </div>
   );
