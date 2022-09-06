@@ -29,16 +29,17 @@ function App() {
         <SimpleSelect
           onChange={select}
           value={selected}
-          placeholder="Test placeholder"
           options={[
-            { label: "Новый", color: "#7EEDD4" },
-            { label: "Назначен ответственный менеджер", color: "#F58C2B" },
-            { label: "Расчет стоимости заказа", color: "#F1F52B" },
-            { label: "Рассчитана стоимость заказа", color: "#F52B2B" },
-            { label: "Груз принят в порту отправления", color: "#2FF52B" },
-            { label: "Груз размещен на судне", color: "#532BF5" },
-            { label: "Груз доставлен в порт назначения", color: "#532BF5" },
-          ]}
+            { label: "Новый", color: "#7EEDD4;" },
+            { label: "Назначен ответственный менеджер", color: "#F58C2B;" },
+            { label: "Расчет стоимости заказа", color: "#F1F52B;" },
+            { label: "Рассчитана стоимость заказа", color: "#F52B2B;" },
+            { label: "Груз принят в порту отправления", color: "#2FF52B;" },
+            { label: "Груз размещен на судне", color: "#532BF5;" },
+            { label: "Груз доставлен в порт назначения", color: "#532BF5;" },
+          ].map((el) => (
+            <LabelWithColor label={el.label} color={el.color} />
+          ))}
         />
       </div>
       <div style={{ width: 800, padding: 10 }}>

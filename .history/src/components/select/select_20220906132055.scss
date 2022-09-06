@@ -84,7 +84,6 @@
 }
 
 .simpleSelect {
-  width: -webkit-fill-available;
   .input {
     height: 34px;
 
@@ -94,22 +93,6 @@
     &.active {
       border-radius: 2px 2px 0px 0px;
     }
-
-    .content {
-      display: flex;
-      align-items: center;
-      padding-left: 13px;
-      font-size: 13px;
-      color: #000000;
-      margin-right: 13px;
-      overflow-x: hidden;
-      white-space: nowrap;
-      .placeholder {
-        background: #ffffff;
-        color: #acacac;
-      }
-    }
-
     .button {
       @include arrow-btn();
     }
@@ -117,7 +100,7 @@
   .dropdown-menu {
     padding: 0;
     display: block;
-    position: absolute;
+    position: static;
     width: -webkit-fill-available;
     list-style: none;
     background: #ffffff;
@@ -135,21 +118,6 @@
       align-items: center;
       min-height: 34px;
       padding-left: 13px;
-      color: #57617b;
-      &:hover {
-        color: #2a2e37;
-        background: #e3e6eb;
-      }
     }
-  }
-  .colorized {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    margin-right: 10px;
-    position: relative;
-    top: -1px;
   }
 }

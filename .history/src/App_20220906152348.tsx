@@ -29,7 +29,6 @@ function App() {
         <SimpleSelect
           onChange={select}
           value={selected}
-          placeholder="Test placeholder"
           options={[
             { label: "Новый", color: "#7EEDD4" },
             { label: "Назначен ответственный менеджер", color: "#F58C2B" },
