@@ -171,22 +171,6 @@
         padding-top: 15px;
         display: flex;
         justify-content: space-between;
-        button.primary {
-          border-radius: 2px;
-          padding: 7px 23px;
-          background: #2a2e37;
-          color: #ffffff;
-          font-size: 12px;
-          text-transform: capitalize;
-        }
-        button {
-          background: #ffffff;
-          margin: 0;
-          padding: 0 10px;
-          border: 0;
-          color: #babfc5;
-          font-size: 13px;
-        }
       }
     }
     .react-datepicker {

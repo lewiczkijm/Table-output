@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <div style={{ width: 480, padding: 10, display: "flex" }}>
         <Autocomplite title="My name" placeholder="Выберите порт" options={options} onChange={() => {}} />
-        <Datepicker title="Дата поступления в порт" value={new Date()} onChange={(d: any) => console.log(d)} />
+        <Datepicker title="Дата поступления в порт" />
       </div>
       <div style={{ width: 280, padding: 10 }}>
         <SimpleSelect
