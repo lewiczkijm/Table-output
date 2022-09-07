@@ -13,7 +13,7 @@ import exampleData from "./exampleData.json";
 import { CargoDocumentType } from "./components/document/documentType";
 
 const RenderedDocument = (props: any) => {
-  return <>1234</>;
+  return <></>;
 };
 
 function App() {

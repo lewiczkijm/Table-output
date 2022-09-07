@@ -9,12 +9,6 @@ import { LabelWithColor, SimpleSelect } from "./components/select/simpleSelect";
 import { Datepicker } from "./components/select/datepicker";
 import { Limiter, Paginator } from "./components/paginator";
 import { Table } from "./components/table";
-import exampleData from "./exampleData.json";
-import { CargoDocumentType } from "./components/document/documentType";
-
-const RenderedDocument = (props: any) => {
-  return <>1234</>;
-};
 
 function App() {
   const [options, setOptions] = useState<Array<{ label: string }>>([]);
@@ -67,7 +61,7 @@ function App() {
         <Limiter value={limit} onChange={setLimit} />
       </div>
       <div style={{ width: 1550, padding: 10 }}>
-        <Table data={exampleData as CargoDocumentType[]} Document={RenderedDocument} />
+        <Table />
       </div>
     </div>
   );
