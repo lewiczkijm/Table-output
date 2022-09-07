@@ -27,6 +27,7 @@
 }
 .limiter {
   @include container();
+  width: 300px;
   display: flex;
   align-items: center;
   font-size: 13px;

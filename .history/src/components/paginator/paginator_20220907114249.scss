@@ -25,25 +25,3 @@
     }
   }
 }
-.limiter {
-  @include container();
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  .label {
-    padding-left: 25px;
-    padding-right: 10px;
-  }
-  button {
-    border: 0;
-    width: 47px;
-    height: 48px;
-    background: #ffffff;
-    &.selected {
-      background: #e3e6eb;
-    }
-    &:hover {
-      background: #f2f2f2;
-    }
-  }
-}

@@ -56,7 +56,7 @@ function App() {
       <div style={{ width: 700, padding: 10 }}>
         <Paginator count={4} selected={page} onChange={setPage} />
       </div>
-      <div style={{ width: 300, padding: 10 }}>
+      <div>
         <Limiter value={limit} onChange={setLimit} />
       </div>
     </div>

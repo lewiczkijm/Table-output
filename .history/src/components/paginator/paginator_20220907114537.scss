@@ -3,6 +3,8 @@
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(221, 222, 222, 0.5);
   border-radius: 38px;
+  display: flex;
+  align-items: center;
 }
 .paginator {
   @include container();
@@ -27,23 +29,4 @@
 }
 .limiter {
   @include container();
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  .label {
-    padding-left: 25px;
-    padding-right: 10px;
-  }
-  button {
-    border: 0;
-    width: 47px;
-    height: 48px;
-    background: #ffffff;
-    &.selected {
-      background: #e3e6eb;
-    }
-    &:hover {
-      background: #f2f2f2;
-    }
-  }
 }
