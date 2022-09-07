@@ -1,0 +1,15 @@
+import React, { useMemo } from "react";
+export type PaginatorProps = {
+  onChange: (number: number) => void;
+  count: number;
+};
+export const Paginator = ({ onChange, count }: PaginatorProps) => {
+  const width = useMemo(() => (count + 2) * 50, []);
+  return (
+    <div style={{ width }} className="paginator">
+      <button>1</button>
+      <button className="numbered">2</button>
+      <button>2</button>
+    </div>
+  );
+};

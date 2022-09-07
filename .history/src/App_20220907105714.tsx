@@ -13,7 +13,7 @@ function App() {
   const [options, setOptions] = useState<Array<{ label: string }>>([]);
 
   const [selected, select] = useState<any>(undefined);
-  const [page, setPage] = useState(1);
+
   useEffect(() => {
     let arr = [];
     for (let i = 0; i < 100; i++) {
@@ -53,7 +53,7 @@ function App() {
         <InputFind placeholder="Найти коносамент, груз, заказ и др." />{" "}
       </div>
       <div style={{ width: 300, padding: 10 }}>
-        <Paginator count={4} selected={page} onChange={setPage} />
+        <Paginator count={4} selected={1} onChange={() => {}} />
       </div>
     </div>
   );
