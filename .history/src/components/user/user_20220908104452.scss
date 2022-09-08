@@ -1,0 +1,22 @@
+.userPane {
+  display: flex;
+  align-items: center;
+  & > div {
+    padding-left: 26px;
+  }
+  .role {
+    font-size: 14px;
+    color: #5a5a5a;
+  }
+}
+
+.round {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  &.hovered:hover {
+    background: #858993 !important;
+  }
+}

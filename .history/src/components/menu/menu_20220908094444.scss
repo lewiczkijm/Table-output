@@ -48,36 +48,14 @@
   }
 }
 
-.header {
-  a {
-    font-size: 12px;
-    color: #acacac;
-    text-decoration: none;
-    display: flex;
-    align-items: baseline;
-    &:hover {
-      color: #acacac;
-    }
-  }
-  h1 {
-    padding-top: 12px;
-    font-size: 18px;
-    color: #3a3c40;
-  }
-}
-
 .footer {
   color: #2a2e37;
   nav {
-    padding-top: 25px;
     a {
-      padding-right: 76px;
       text-decoration: none;
       color: #606b87;
-      font-size: 14px;
       &:hover {
         color: #606b87;
-        text-decoration: underline;
       }
     }
   }

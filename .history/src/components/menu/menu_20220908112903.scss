@@ -53,16 +53,11 @@
     font-size: 12px;
     color: #acacac;
     text-decoration: none;
-    display: flex;
-    align-items: baseline;
+    display: inline-flex;
+    align-items: center;
     &:hover {
       color: #acacac;
     }
-  }
-  h1 {
-    padding-top: 12px;
-    font-size: 18px;
-    color: #3a3c40;
   }
 }
 

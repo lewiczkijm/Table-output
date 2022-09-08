@@ -1,0 +1,39 @@
+import React from "react";
+import "./user.scss";
+import exit from "./exit.svg";
+
+export const UserPane = () => {
+  return (
+    <div className="userPane">
+      <div className="role">Менеджер</div>
+      <div>
+        <Round hovered>
+          <div style={{ fontSize: 16, paddingTop: 2 }}>ИИ</div>
+        </Round>
+      </div>
+      <div>
+        <Round hovered>
+          <img src={exit} />
+        </Round>
+      </div>
+    </div>
+  );
+};
+
+export const UserInfo = ({}) => {
+  return <></>;
+};
+
+export type RoundType = {
+  size?: number;
+  color?: string;
+  hovered?: boolean;
+  children: JSX.Element;
+};
+export const Round: React.FC<RoundType> = ({ children, size = 52, color = "#ADB4C2", hovered }) => {
+  return (
+    <div style={{ width: size, height: size, background: color }} className={`round ${hovered ? "hovered" : ""}`}>
+      {children}
+    </div>
+  );
+};
