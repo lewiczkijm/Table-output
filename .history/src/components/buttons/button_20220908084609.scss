@@ -49,17 +49,9 @@
 }
 
 .addButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 210px;
-  height: 48px;
   background: #2a2e37;
   border: 0;
   border-radius: 4px;
-  &:hover {
-    background: #82868c;
-  }
 }
 
 .fileAttachButton {

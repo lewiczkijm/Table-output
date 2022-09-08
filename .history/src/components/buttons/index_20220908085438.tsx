@@ -5,7 +5,7 @@ import attach from "./attach.svg";
 import plus from "./plus.svg";
 
 export type ButtonProps = {
-  title?: string;
+  title: string;
   onClick: () => void;
   primary?: boolean;
   icon?: ReactNode;

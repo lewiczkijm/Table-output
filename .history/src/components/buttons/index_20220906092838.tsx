@@ -2,10 +2,9 @@ import { type } from "@testing-library/user-event/dist/type";
 import React, { ReactNode, useRef } from "react";
 import "./button.scss";
 import attach from "./attach.svg";
-import plus from "./plus.svg";
 
 export type ButtonProps = {
-  title?: string;
+  title: string;
   onClick: () => void;
   primary?: boolean;
   icon?: ReactNode;
@@ -14,14 +13,6 @@ export const ButtonLarge = ({ title, onClick, primary }: ButtonProps) => {
   return (
     <button className={`bigButton ${primary ? "primary" : ""}`} onClick={onClick}>
       {title}
-    </button>
-  );
-};
-
-export const ButtonAdd = ({ onClick }: ButtonProps) => {
-  return (
-    <button className={`addButton`} onClick={onClick}>
-      <img src={plus} />
     </button>
   );
 };

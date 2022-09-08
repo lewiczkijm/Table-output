@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App d-flex">
       <Sidebar />
-      <div className="d-flex flex-column justify-content-between">
+      <div className="d-flex flex-direction-column justify-content-between">
         <Elements />
         <Fotter />
       </div>

@@ -1,0 +1,25 @@
+.sidebar {
+  padding-top: 34px;
+  width: 270px;
+  background: #ffffff;
+  /* Shadow Form */
+
+  box-shadow: 0px 5px 18px rgba(40, 41, 61, 0.07);
+  .sidebarHeader
+.sidebarBody
+  text-align: center;
+}
+
+.divider {
+  padding: 10px 0;
+}
+.menuItem {
+  img {
+    margin-right: 20px;
+  }
+  span {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
