@@ -10,6 +10,29 @@
   }
 }
 
+.userInfo {
+  padding-top: 48px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  .header {
+    height: auto !important;
+    color: #82868c;
+  }
+  .round {
+    padding: 15px;
+  }
+  .email {
+    color: #5a5a5a;
+  }
+  .ll {
+    padding-top: 10px;
+    font-size: 40px;
+  }
+}
+
 .round {
   border-radius: 50%;
   display: flex;

@@ -6,7 +6,7 @@ export type CargoDocumentType = {
   shipper: string;
   act: string;
   consignment: number;
-  date?: Date | string;
+  date?: string;
 
   //only in document
   status?: DocumentStatusType;
@@ -24,6 +24,8 @@ export type CargoDocumentType = {
   portLocation?: string;
   actFile?: FileType;
   consignmentFile?: FileType;
+
+  port?: string;
 };
 
 export type DocumentStatusType = { label: string; color: string };
@@ -36,6 +38,6 @@ export type ManagerType = {
 };
 export type FileType = {
   name: string;
-  date: Date;
+  date: string;
   label: string;
 };

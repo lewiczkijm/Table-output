@@ -1,6 +1,7 @@
 import React from "react";
 import "./user.scss";
 import exit from "./exit.svg";
+import { ManagerType } from "../document/documentType";
 
 export const UserPane = () => {
   return (
@@ -20,8 +21,20 @@ export const UserPane = () => {
   );
 };
 
-export const UserInfo = ({}) => {
-  return <></>;
+export const UserInfo = ({ firstName, lastName, curname, email, phone }: ManagerType) => {
+  return (
+    <div className="userInfo">
+      <div className="header">Пользователь</div>
+      <div className="round">
+        <Round size={100} color={"#E3E6EB"}>
+          <span className="ll">{`${curname[0]}${firstName[0]}`}</span>
+        </Round>
+      </div>
+      <div className="name">{`${curname} ${firstName}`}</div>
+      <div className="email">{email}</div>
+      <div className="phone">{phone}</div>
+    </div>
+  );
 };
 
 export type RoundType = {

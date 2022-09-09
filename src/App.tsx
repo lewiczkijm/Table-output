@@ -6,9 +6,10 @@ import { Header } from "./components/menu/header";
 import { Table } from "./components/table";
 import { CargoDocumentType } from "./components/document/documentType";
 import { Limiter, Paginator } from "./components/paginator";
-import { CargoDocument } from "./components/document";
 import { useQueries } from "react-query";
 import { Filter, FilterValue } from "./filter";
+import { CargoDocument } from "./components/document";
+import { portsFeth, statusFeth } from "./sharedQuires";
 
 const getCargo = (limit: number, page: number, filter: FilterValue) => {
   const start = (page - 1) * limit,
@@ -26,12 +27,12 @@ function App() {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState<FilterValue>({});
   const [ports, statuses, cargo] = useQueries([
-    { queryKey: ["ports"], queryFn: () => fetch("/ports").then((res) => res.json()) },
-    { queryKey: ["status"], queryFn: () => fetch("/status").then((res) => res.json()) },
+    { queryKey: ["ports"], queryFn: portsFeth },
+    { queryKey: ["status"], queryFn: statusFeth },
     { queryKey: ["cargo", limit, page, filter], queryFn: () => getCargo(limit, page, filter) },
   ]);
 
-  const pages = useMemo(() => (cargo.data ? Math.ceil(cargo.data.length / limit) : 4), [cargo.data]);
+  const pages = useMemo(() => (cargo.data ? Math.ceil(cargo.data.length / limit) : 4), [cargo.data, limit]);
 
   return (
     <div className="App d-flex">
