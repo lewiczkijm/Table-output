@@ -12,7 +12,7 @@ export const Limiter = ({ value, onChange, label = "Показывать по:",
     <div style={{ width }} className="limiter">
       <span className="label">{label}</span>
       {options.map((option) => (
-        <button className={option === value ? "selected" : ""} onClick={() => onChange(option)}>
+        <button key={option} className={option === value ? "selected" : ""} onClick={() => onChange(option)}>
           {option}
         </button>
       ))}

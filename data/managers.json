@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Анна",
+    "lastName": "Николаевна",
+    "curname": "Волгина",
+    "email": "nvolgn@mail.com",
+    "phone": "+7 (927) 123-45-67"
+  },
+  {
+    "firstName": "Иван",
+    "lastName": "Иванович",
+    "curname": "Иванов",
+    "email": "example@mail.com",
+    "phone": "+7 (927) 777-55-55"
+  },
+  {
+    "firstName": "Николай",
+    "lastName": "Дмитриевич",
+    "curname": "Овсов",
+    "email": "example@mail.com",
+    "phone": "+7 (927) 110-04-51"
+  }
+]

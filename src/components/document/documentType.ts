@@ -26,8 +26,14 @@ export type CargoDocumentType = {
   consignmentFile?: FileType;
 };
 
-export type DocumentStatusType = any;
-export type ManagerType = any;
+export type DocumentStatusType = { label: string; color: string };
+export type ManagerType = {
+  firstName: string;
+  lastName: string;
+  curname: string;
+  email: string;
+  phone: string;
+};
 export type FileType = {
   name: string;
   date: Date;

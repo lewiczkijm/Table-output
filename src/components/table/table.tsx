@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from "react";
 import BootstrapTable, { ColumnDescription } from "react-bootstrap-table-next";
 import { CargoDocumentType } from "../document/documentType";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import expandArrow from "./expandArrow.svg";
 
 // Format table header with sort support
@@ -105,7 +105,7 @@ const columns: ColumnDescription[] = [
     dataField: "date",
     text: "Дата поступления в порт",
     sort: true,
-    formatter: (col) => <>{col ? format(new Date(col), "dd.MM.yyyy") : "-"}</>,
+    //formatter: (col) => <>{col ? format(parse(col,"dd.MM.yyyy",new Date()), "dd.MM.yyyy") : "-"}</>,
     headerFormatter: headerFormatter,
   },
 ];

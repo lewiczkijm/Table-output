@@ -1,47 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./App.scss";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-import { Col, Row } from "reactstrap";
-import { Elements } from "./elements";
 import { Fotter, Sidebar } from "./components/menu";
 import { Header } from "./components/menu/header";
-import { Autocomplite } from "./components/select";
-import { Datepicker } from "./components/select/datepicker";
-import { ButtonLarge } from "./components/buttons";
-import exampleData from "./exampleData.json";
 import { Table } from "./components/table";
 import { CargoDocumentType } from "./components/document/documentType";
 import { Limiter, Paginator } from "./components/paginator";
+import { CargoDocument } from "./components/document";
+import { useQueries } from "react-query";
+import { Filter, FilterValue } from "./filter";
+
+const getCargo = (limit: number, page: number, filter: FilterValue) => {
+  const start = (page - 1) * limit,
+    end = page * limit;
+  let address = `/cargo?_start=${start}&_end=${end}`;
+
+  if (filter.date) address += `&date=${filter.date}`;
+  if (filter.status) address += `&status=${filter.status}`;
+  if (filter.port) address += `&port=${filter.port}`;
+  return fetch(address).then((res) => res.json());
+};
 
 function App() {
+  const [limit, setLimit] = useState(20);
+  const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState<FilterValue>({});
+  const [ports, statuses, cargo] = useQueries([
+    { queryKey: ["ports"], queryFn: () => fetch("/ports").then((res) => res.json()) },
+    { queryKey: ["status"], queryFn: () => fetch("/status").then((res) => res.json()) },
+    { queryKey: ["cargo", limit, page, filter], queryFn: () => getCargo(limit, page, filter) },
+  ]);
+
+  const pages = useMemo(() => (cargo.data ? Math.ceil(cargo.data.length / limit) : 4), [cargo.data]);
+
   return (
     <div className="App d-flex">
       <Sidebar />
       <div className="d-flex flex-column justify-content-between article">
         <div>
           <Header />
-          <div className="d-flex" style={{ paddingTop: 13 }}>
-            <div style={{ width: 373, paddingRight: 10 }}>
-              <Autocomplite title="Порт назначения" placeholder="Выберите порт" options={[]} onChange={() => {}} />
-            </div>
-            <div style={{ width: 250, paddingRight: 10 }}>
-              <Autocomplite title="Статус" placeholder="Статус" options={[]} onChange={() => {}} />
-            </div>
-            <div style={{ width: 250, paddingRight: 10 }}>
-              <Datepicker title="Дата поступления в порт" value={undefined} onChange={(d: any) => console.log(d)} />
-            </div>
-            <div style={{ paddingRight: 10 }}>
-              <ButtonLarge title="Сбросить" onClick={() => {}} />
-            </div>
-            <div style={{ paddingRight: 10 }}>
-              <ButtonLarge title="Применить" primary onClick={() => {}} />
-            </div>
-          </div>
+          <Filter statuses={statuses.data || []} onChange={setFilter} ports={ports.data || []} />
           <div style={{ width: 1550, paddingTop: 20 }}>
-            <Table data={exampleData as CargoDocumentType[]} Document={<></>} />
+            <Table data={(cargo.data?.data as CargoDocumentType[]) || []} Document={CargoDocument} />
             <div className="d-flex justify-content-between" style={{ paddingTop: 39 }}>
-              <Limiter value={50} onChange={() => {}} />
-              <Paginator count={4} selected={1} onChange={() => {}} />
+              <Limiter value={limit} onChange={setLimit} />
+              <Paginator count={pages} selected={page} onChange={setPage} />
             </div>
           </div>
         </div>

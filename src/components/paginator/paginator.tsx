@@ -33,7 +33,7 @@ export const Paginator = ({ onChange, count, selected }: PaginatorProps) => {
     const buttons: Array<React.ReactElement> = [];
     for (let i = 1; i <= count; i++) {
       buttons.push(
-        <button onClick={() => select(i)} className={`numbered ${selected === i ? "selected" : ""}`}>
+        <button key={i} onClick={() => select(i)} className={`numbered ${selected === i ? "selected" : ""}`}>
           {i}
         </button>
       );

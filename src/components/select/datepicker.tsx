@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { Menu, Typeahead } from "react-bootstrap-typeahead";
 import DatePickerReact from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,18 +23,23 @@ export const Datepicker = ({ onChange, title, value }: any) => {
 
   useEffect(() => {
     if (value) setSelected([{ label: format(value, "dd.MM.yyyy") }]);
-  }, []);
+    else setSelected([]);
+  }, [value]);
 
   const setValue = () => {
     onChange(date);
     setSelected([{ label: format(date, "dd.MM.yyyy") }]);
   };
+
+  const id = useId();
+
   return (
     <div className="select datepicker">
       <Typeahead
-        id="f"
+        id={id}
         placeholder={"__.__.____"}
         selected={selected}
+        onChange={() => {}}
         renderInput={({ inputRef, referenceElementRef, onFocus, onBlur, ...inputProps }) => {
           return (
             <label

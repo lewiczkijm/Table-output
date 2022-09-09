@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 
 import { Typeahead } from "react-bootstrap-typeahead";
 import btn from "./btn.svg";
@@ -14,9 +14,11 @@ export type SelectType = {
 
 export const Autocomplite = ({ options, onChange, selected, title, placeholder }: SelectType) => {
   const [isFocus, setIsFocus] = useState(false);
+  const id = useId();
   return (
     <label className="select">
       <Typeahead
+        id={id}
         placeholder={placeholder}
         onChange={onChange}
         renderInput={({ inputRef, referenceElementRef, onFocus, onBlur, ...inputProps }) => {

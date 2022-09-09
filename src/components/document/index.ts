@@ -1,1 +1,2 @@
-export const a = 0;
+import "./document.scss";
+export { CargoDocument } from "./document";

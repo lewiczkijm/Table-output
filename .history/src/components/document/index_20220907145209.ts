@@ -1,1 +1,0 @@
-export { DocumentType } from "./documentType";
