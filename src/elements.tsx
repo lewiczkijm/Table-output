@@ -11,7 +11,6 @@ import exampleData from "./exampleData.json";
 import { CargoDocumentType } from "./components/document/documentType";
 
 const RenderedDocument = (props: any) => {
-  debugger;
   return <>1234</>;
 };
 
@@ -30,7 +29,8 @@ export const Elements = ({}) => {
   }, []);
 
   return (
-    <div>
+    <div style={{ paddingTop: 20 }}>
+      <Table data={exampleData as CargoDocumentType[]} Document={RenderedDocument} />
       <div style={{ width: 480, padding: 10, display: "flex" }}>
         <Autocomplite title="My name" placeholder="Выберите порт" options={options} onChange={() => {}} />
         <Datepicker title="Дата поступления в порт" value={new Date()} onChange={(d: any) => console.log(d)} />
@@ -65,9 +65,7 @@ export const Elements = ({}) => {
       <div style={{ width: 300, padding: 10 }}>
         <Limiter value={limit} onChange={setLimit} />
       </div>
-      <div style={{ width: 1550, padding: 10 }}>
-        <Table data={exampleData as CargoDocumentType[]} Document={RenderedDocument} />
-      </div>
+      <div style={{ width: 1550, padding: 10 }}></div>
     </div>
   );
 };
